@@ -8,7 +8,16 @@
     <title>Server Side Calculator</title>
 </head>
 <body>
-
+    <form onSubmit="submitForm(event)">
+        <input type="number">
+        <button type="button" onClick="plusKey">+</button>
+        <button type="button" onClick="minusKey">-</button>
+        <button type="button" onClick="timesKey">*</button>
+        <button type="button" onClick="divideKey">/</button>
+        <input type="number">
+        <button>=</button>
+        <button>C</button>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts/client.js"></script>
 </body>
