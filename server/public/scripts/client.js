@@ -1,6 +1,7 @@
 console.log('JS Sourced');
 
 let selectedOperator = '';
+let calcNum = 1;
 
 function submitForm(event) {
     event.preventDefault();
@@ -8,7 +9,6 @@ function submitForm(event) {
     console.log('In submitForm');
     let valueOne = Number(document.querySelector('#valueOne').value);
     let valueTwo = Number(document.querySelector('#valueTwo').value);
-    let calcNum = 1;
     console.log('Value 1:', valueOne, 'Value 2:', valueTwo);
     let inputForServer = {
         calcNum: calcNum,

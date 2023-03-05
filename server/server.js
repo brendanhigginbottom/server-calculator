@@ -11,6 +11,20 @@ const port = process.env.PORT || 5001;
 //Allow req.body
 app.use(express.json());
 
+//refactor here down to express.static
+
+let calcHistory = [];
+
+app.get('/calculations', (req, res) => {
+    console.log('GET Request made for /calculations');
+    res.send(calcHistory);
+})
+
+app.post('/calculations', (req, res) => {
+    console.log('POST Request made for /calculations');
+    console.log(req.body);
+})
+
 //for refactoring later
 //app.use('/calcs', calcRouter);
 
