@@ -19,19 +19,19 @@ function calculate(calcNum, value1, value2, operator) {
     let result = 0;
     switch (operator) {
         case '+':
-            result = value1 + value2;
+            result = (value1 + value2).toFixed(2);
             //console.log('+ switch eval true');
             break;
         case '-':
-            result = value1 - value2;
+            result = (value1 - value2).toFixed(2);
             //console.log('- switch eval true');
             break;
         case '*':
-            result = value1 * value2;
+            result = (value1 * value2).toFixed(2);
             //console.log('* switch eval true')
             break;
         case '/':
-            result = value1 / value2;
+            result = (value1 / value2).toFixed(2);
             //console.log('/ switch eval true');
             break;
         default:

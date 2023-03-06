@@ -3,7 +3,7 @@ console.log('JS Sourced');
 let selectedOperator = '';
 let calcNum = 1;
 
-// Write GET function that will append here
+// GET request to append history to an unordered list and display current result
 
 function getHistory() {
     axios.get('/calculations').then((response) => {
@@ -28,7 +28,7 @@ function getHistory() {
     });
 }
 
-
+//Gathers user's inputs and posts to server
 function submitForm(event) {
     event.preventDefault();
     //Capturing values and incrementing calcNum for ID to delete by
@@ -54,6 +54,8 @@ function submitForm(event) {
     });
 }
 
+// onClicks all change global variable (user's operator selection) to be 
+// the value of button pressed
 function plusKey(event) {
     selectedOperator = '+';
     console.log(selectedOperator);
