@@ -3,6 +3,9 @@ console.log('JS Sourced');
 let selectedOperator = '';
 let calcNum = 1;
 
+// Write GET function that will append here
+
+
 function submitForm(event) {
     event.preventDefault();
     //Capturing values and incrementing calcNum for ID to delete by
