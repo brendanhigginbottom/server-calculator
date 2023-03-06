@@ -48,11 +48,6 @@ function calculate(calcNum, value1, value2, operator) {
     console.log(calcHistory);
 }
 
-app.get('/calculations', (req, res) => {
-    console.log('GET Request made for /calculations');
-    res.send(calcHistory);
-})
-
 app.post('/calculations', (req, res) => {
     console.log('POST Request made for /calculations');
     console.log(req.body);
@@ -62,7 +57,13 @@ app.post('/calculations', (req, res) => {
     let operator = req.body.operator;
     //console.log(operator);
     calculate(calcNum, value1, value2, operator);
-})
+    res.sendStatus(200);
+});
+
+app.get('/calculations', (req, res) => {
+    console.log('GET Request made for /calculations');
+    res.send(calcHistory);
+});
 
 //for refactoring later
 //app.use('/calcs', calcRouter);

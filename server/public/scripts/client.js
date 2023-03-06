@@ -5,6 +5,25 @@ let calcNum = 1;
 
 // Write GET function that will append here
 
+function getHistory() {
+    axios.get('/calculations').then((response) => {
+        console.log(response);
+        let historyFromServer = response.data;
+        console.log(historyFromServer);
+        let historyDiv = document.querySelector('#history');
+        historyDiv.innerHTML = '';
+        for (let calc of historyFromServer) {
+            historyDiv.innerHTML += `
+            <li> ${calc.valueOne} ${calc.operator} ${calc.valueTwo} = ${calc.result}
+            </li>
+            `;
+        };
+    }).catch((error) => {
+        console.log(error);
+        alert('Something wen wrong.');
+    });
+}
+
 
 function submitForm(event) {
     event.preventDefault();
@@ -24,7 +43,7 @@ function submitForm(event) {
     //posting inputs to server for calculation
     axios.post('/calculations', inputForServer).then((response) => {
         console.log(response);
-        //getCalcs();
+        getHistory();
     }).catch((error) => {
         console.log(error);
         alert('Something went wrong.')
