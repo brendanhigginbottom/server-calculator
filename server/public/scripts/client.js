@@ -10,6 +10,10 @@ function getHistory() {
         console.log(response);
         let historyFromServer = response.data;
         console.log(historyFromServer);
+        let resultDiv = document.querySelector('#result');
+        //Checking result at last index for display
+        //This will probably need to be reworked if going for delete functionality
+        resultDiv.innerHTML = `${historyFromServer[historyFromServer.length -1].result}`;
         let historyDiv = document.querySelector('#history');
         historyDiv.innerHTML = '';
         for (let calc of historyFromServer) {
