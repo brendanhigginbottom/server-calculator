@@ -15,6 +15,39 @@ app.use(express.json());
 
 let calcHistory = [];
 
+function calculate(calcNum, value1, value2, operator) {
+    let result = 0;
+    switch (operator) {
+        case '+':
+            result = value1 + value2;
+            //console.log('+ switch eval true');
+            break;
+        case '-':
+            result = value1 - value2;
+            //console.log('- switch eval true');
+            break;
+        case '*':
+            result = value1 * value2;
+            //console.log('* switch eval true')
+            break;
+        case '/':
+            result = value1 / value2;
+            //console.log('/ switch eval true');
+            break;
+        default:
+            result = 'test';
+            console.log('Not working');
+    }
+    calcHistory.push({
+        calcNum: calcNum,
+        valueOne: value1,
+        valueTwo: value2,
+        operator: operator,
+        result: result
+    });
+    console.log(calcHistory);
+}
+
 app.get('/calculations', (req, res) => {
     console.log('GET Request made for /calculations');
     res.send(calcHistory);
@@ -23,6 +56,12 @@ app.get('/calculations', (req, res) => {
 app.post('/calculations', (req, res) => {
     console.log('POST Request made for /calculations');
     console.log(req.body);
+    let calcNum = req.body.calcNum;
+    let value1 = req.body.valueOne;
+    let value2 = req.body.valueTwo;
+    let operator = req.body.operator;
+    //console.log(operator);
+    calculate(calcNum, value1, value2, operator);
 })
 
 //for refactoring later
