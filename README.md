@@ -1,9 +1,13 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Server-side Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Allows user to input whole numbers for calculation (addition, subtraction, multiplication, and division). Code is run server-side and a history of calculations is appended to the DOM.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Features to add:
+Delete calc
+Rerun calc
+Interface upgrade
+refactor routing
